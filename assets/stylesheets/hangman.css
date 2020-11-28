@@ -62,3 +62,62 @@ h1 {
   height: 50px;
   background-color: #000;
 }
+
+.hangman-gallow .man-head {
+  position: absolute;
+  left: 197px;
+  bottom: 205px;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #000;
+  border-radius: 40px;
+}
+
+.hangman-gallow .man-torso {
+  position: absolute;
+  left: 219px;
+  bottom: 105px;
+  width: 4px;
+  height: 100px;
+  background-color: #000;
+}
+
+.hangman-gallow .man-left-arm {
+  position: absolute;
+  left: 196px;
+  bottom: 160px;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
+  transform: rotate(-60deg);
+}
+
+.hangman-gallow .man-right-arm {
+  position: absolute;
+  left: 242px;
+  bottom: 160px;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
+  transform: rotate(60deg);
+}
+
+.hangman-gallow .man-left-leg {
+  position: absolute;
+  left: 206px;
+  bottom: 59px;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
+  transform: rotate(30deg);
+}
+
+.hangman-gallow .man-right-leg {
+  position: absolute;
+  left: 232px;
+  bottom: 59px;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
+  transform: rotate(-30deg);
+}
