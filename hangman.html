@@ -76,6 +76,16 @@
         Hangman.guessLetter($(this).html());
         $(this).addClass("disabled");
       });
+
+      $("body").keypress(function(e){
+        let letterPressed = String.fromCharCode(e.which).toUpperCase();
+
+        $(".hangman-letters").children(".letter").each(function() {
+          if($(this).html() == letterPressed) {
+            $(this).trigger("click");
+          }
+        });
+      });
     </script>
   </body>
 </html>
