@@ -5,6 +5,8 @@
     <title>Hangman</title>
 
     <link rel="stylesheet" href="assets/stylesheets/hangman.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="assets/javascripts/hangman.js"></script>
   </head>
 
@@ -18,22 +20,16 @@
       <div class="gallow-top"></div>
       <div class="gallow-right"></div>
 
-      <div class="man-head"></div>
-      <div class="man-torso"></div>
-      <div class="man-left-arm"></div>
-      <div class="man-right-arm"></div>
-      <div class="man-left-leg"></div>
-      <div class="man-right-leg"></div>
+      <div class="man-head hide"></div>
+      <div class="man-torso hide"></div>
+      <div class="man-left-arm hide"></div>
+      <div class="man-right-arm hide"></div>
+      <div class="man-left-leg hide"></div>
+      <div class="man-right-leg hide"></div>
     </section>
 
     <section class="hangman-word">
-      <span class="word-letter">&nbsp;</span>
-      <span class="word-letter">&nbsp;</span>
-      <span class="word-letter">&nbsp;</span>
-      <span class="word-letter">&nbsp;</span>
-      <span class="word-letter">&nbsp;</span>
-      <span class="word-letter">&nbsp;</span>
-      <span class="word-letter">&nbsp;</span>
+      <!-- <span class="word-letter">&nbsp;</span> -->
     </section>
 
     <section class="hangman-letters">
@@ -62,7 +58,24 @@
       <span class="letter">W</span>
       <span class="letter">X</span>
       <span class="letter">Y</span>
-      <span class="letter disabled">Z</span>
+      <span class="letter">Z</span>
     </section>
+
+    <button type="button" class="new-game">New Game</button>
+
+    <script>
+      Hangman.newGame();
+
+      $("button.new-game").click(function() {
+        Hangman.newGame()
+      });
+
+      $(".hangman-letters").children(".letter").click(function() {
+        if($(this).hasClass("disabled") || !Hangman.lives) { return }
+
+        Hangman.guessLetter($(this).html());
+        $(this).addClass("disabled");
+      });
+    </script>
   </body>
 </html>

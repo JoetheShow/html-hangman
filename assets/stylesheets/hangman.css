@@ -4,6 +4,16 @@ body {
   font-family: monospace;
 }
 
+.hide { display: none; }
+
+.new-game {
+  display: block;
+  margin: 0 auto;
+  font-size: 30px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
 h1 {
   margin: 0;
   padding: 20px 0;
@@ -128,6 +138,7 @@ h1 {
 }
 
 .hangman-word {
+  min-height: 47px;
   margin-bottom: 40px;
   padding-bottom: 40px;
   text-align: center;
@@ -139,11 +150,13 @@ h1 {
   display: inline-block;
   width: 40px;
   height: 40px;
+  margin: 0 10px;
   padding-bottom: 5px;
   border-bottom: 2px solid #000;
 }
 
 .hangman-letters {
+  margin-bottom: 40px;
   text-align: center;
 }
 
