@@ -71,7 +71,7 @@
       });
 
       $(".hangman-letters").children(".letter").click(function() {
-        if($(this).hasClass("disabled") || !Hangman.lives) { return }
+        if($(this).hasClass("disabled") || !Hangman.lives || Hangman.won) { return }
 
         Hangman.guessLetter($(this).html());
         $(this).addClass("disabled");

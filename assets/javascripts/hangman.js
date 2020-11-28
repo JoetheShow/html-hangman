@@ -1,6 +1,7 @@
 class Hangman {
   static word;
   static lives = 6;
+  static won = false;
 
   static newGame() {
     console.log("- Starting Hangman -");
@@ -18,7 +19,7 @@ class Hangman {
   }
 
   static hidePerson() {
-    $(".hangman-gallow").children(".man-head .man-torso .man-left-arm .man-right-arm .man-left-leg .man-right-leg").addClass("hide");
+    $(".hangman-gallow").children(".man-head, .man-torso, .man-left-arm, .man-right-arm, .man-left-leg, .man-right-leg").addClass("hide");
   }
 
   static resetLetters() {
@@ -53,6 +54,11 @@ class Hangman {
 
     if(this.word.includes(letter)) {
       this.revealLetter(letter);
+
+      if(this.allLettersRevealed()) {
+        this.won = true;
+        alert("You won!");
+      }
     } else {
       this.lives -= 1;
 
@@ -62,6 +68,18 @@ class Hangman {
         this.gameOver();
       }
     }
+  }
+
+  static allLettersRevealed() {
+    let allLetters = true;
+
+    for(var i = 0; i < this.word.length; i++) {
+      if($($(".hangman-word").children(".word-letter")[i]).html() == "&nbsp;") {
+        allLetters = false;
+      }
+    }
+
+    return allLetters;
   }
 
   static revealLetter(letter) {
