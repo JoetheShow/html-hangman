@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.hangman-gallow {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  /* border: 1px solid black; */
+}
+
+.hangman-gallow .gallow-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  height: 4px;
+  background-color: #000;
+}
+
+.hangman-gallow .gallow-left {
+  position: absolute;
+  left: 73px;
+  bottom: 0;
+  width: 4px;
+  height: 300px;
+  background-color: #000;
+}
+
+.hangman-gallow .gallow-corner {
+  position: absolute;
+  left: 74px;
+  bottom: 273px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid #000;
+  transform: rotate(45deg);
+}
+
+.hangman-gallow .gallow-top {
+  position: absolute;
+  left: 73px;
+  bottom: 300px;
+  width: 150px;
+  height: 4px;
+  background-color: #000;
+}
+
+.hangman-gallow .gallow-right {
+  position: absolute;
+  left: 219px;
+  bottom: 250px;
+  width: 4px;
+  height: 50px;
+  background-color: #000;
+}
