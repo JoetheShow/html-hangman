@@ -11,7 +11,7 @@ h1 {
   position: relative;
   width: 300px;
   height: 400px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   /* border: 1px solid black; */
 }
 
@@ -120,4 +120,18 @@ h1 {
   height: 50px;
   background-color: #000;
   transform: rotate(-30deg);
+}
+
+.hangman-word {
+  text-align: center;
+  font-size: 40px;
+  font-family: monospace;
+}
+
+.hangman-word .word-letter {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #000;
 }
