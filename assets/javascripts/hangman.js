@@ -60,7 +60,9 @@ class Hangman {
 
       if(this.allLettersRevealed()) {
         this.won = true;
-        alert("You won!");
+        setTimeout(function() {
+          alert("You won!");
+        }, 10);
       }
     } else {
       this.lives -= 1;
