@@ -15,7 +15,10 @@ class Hangman {
   }
 
   static gameOver() {
-    alert("You lost");
+    setTimeout(function() {
+      alert("You lost");
+      Hangman.revealAllLetters();
+    }, 10);
   }
 
   static hidePerson() {
@@ -67,6 +70,12 @@ class Hangman {
       if(!this.lives) {
         this.gameOver();
       }
+    }
+  }
+
+  static revealAllLetters() {
+    for(var i = 0; i < this.word.length; i++) {
+      this.revealLetter(this.word[i]);
     }
   }
 
